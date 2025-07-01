@@ -1,11 +1,22 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended",
-    "group:allNonMajor"
+    "group:angularMonorepo"
   ],
-  "recreateWhen": "always",
-  "branchPrefix": "deps/",
-  "commitMessagePrefix": "[BOT]",
-  "packageRules": []
+  "packageRules": [
+    {
+      "description": "Massage the group slug to match the Angular monorepo group",
+      "matchDatasources": [
+        "npm"
+      ],
+      "matchPackageNames": [
+        "@angular-devkit/build-angular"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
+      "groupSlug": "major-angular-monorepo",
+      "groupName": "angular monorepo"
+    }
+  ]
 }
