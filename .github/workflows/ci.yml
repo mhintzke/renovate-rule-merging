@@ -13,7 +13,7 @@ jobs:
     environment: test
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     - name: Renovate Bot GitHub Action
       uses: renovatebot/github-action@v43.0.2
